@@ -1,0 +1,47 @@
+# Self-hosted Deployment Guide
+
+This guide will help you set up a self-hosted deployment of your application.
+
+## Prerequisites
+- A server with at least 2GB of RAM.
+- Docker installed on the server.
+- Access to the domain name for your application.
+
+## Steps to Deploy
+1. **Clone the Repository**  
+   Use the following command to clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
+
+2. **Navigate to the Project Directory**  
+   Change into the directory of your project:  
+   ```bash
+   cd your-repo
+   ```
+
+3. **Build the Docker Image**  
+   Run the following command to build your Docker image:  
+   ```bash
+   docker build -t your-app-name .
+   ```
+
+4. **Run the Docker Container**  
+   Start a new container instance from your image:  
+   ```bash
+   docker run -d -p 80:80 your-app-name
+   ```
+
+5. **Configure Domain Settings**  
+   Point your domain to the IP address of your server.
+
+6. **Check Deployment**  
+   Visit your domain in a web browser to see your app in action!  
+
+## Troubleshooting
+- If you encounter issues, check the Docker logs for more information:
+```bash
+docker logs <container-id>
+```  
+
+For more detailed information, refer to the [official documentation](https://docs.docker.com/).
